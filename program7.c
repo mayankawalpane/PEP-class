@@ -1,20 +1,20 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main() {
-    char pass[30] = "admin123";
-    char input[30];
-    int i = 0;
-    char ch;
+    string pass = "admin123";
+    string input;
     
-    printf("Enter Password: ");
-    
-    while (1) {
-        ch = getchar();
-        if (ch == '\n' || ch == EOF) {
-            input[i] = '\0'; 
-            break;
-        }
-        input[i] = ch;
-        i++;
+    cout << "Enter Password: ";
+    cin >> input;
+
+    if (input == pass) {
+        cout << "Welcome\n";
+    } else {
+        cout << "Wrong Password\n";
     }
+    
+    return 0;
+}
